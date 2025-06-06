@@ -217,7 +217,7 @@ export default function Home() {
 
           <p className={styles.credentialsNote}>
             <strong>Note:</strong> Enter the credentials you obtained from your
-            Testluy REST API application.
+            TestLuy REST API application.
           </p>
         </div>
 
