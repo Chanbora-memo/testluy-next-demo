@@ -1,0 +1,2650 @@
+{
+  "testDate": "2025-05-14T08:49:07.137Z",
+  "explorerPlus": [
+    {
+      "requestNumber": 1,
+      "timestamp": "2025-05-14T08:48:44.308Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:44 GMT, Wed, 14 May 2025 08:48:44 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "99",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "99"
+      }
+    },
+    {
+      "requestNumber": 2,
+      "timestamp": "2025-05-14T08:48:44.500Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:44 GMT, Wed, 14 May 2025 08:48:44 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "98",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "98"
+      }
+    },
+    {
+      "requestNumber": 3,
+      "timestamp": "2025-05-14T08:48:44.702Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:44 GMT, Wed, 14 May 2025 08:48:44 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "97",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "97"
+      }
+    },
+    {
+      "requestNumber": 4,
+      "timestamp": "2025-05-14T08:48:44.898Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:44 GMT, Wed, 14 May 2025 08:48:44 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "96",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "96"
+      }
+    },
+    {
+      "requestNumber": 5,
+      "timestamp": "2025-05-14T08:48:45.090Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:45 GMT, Wed, 14 May 2025 08:48:45 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "95",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "95"
+      }
+    },
+    {
+      "requestNumber": 6,
+      "timestamp": "2025-05-14T08:48:45.287Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:45 GMT, Wed, 14 May 2025 08:48:45 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "94",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "94"
+      }
+    },
+    {
+      "requestNumber": 7,
+      "timestamp": "2025-05-14T08:48:45.487Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:45 GMT, Wed, 14 May 2025 08:48:45 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "93",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "93"
+      }
+    },
+    {
+      "requestNumber": 8,
+      "timestamp": "2025-05-14T08:48:45.679Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:45 GMT, Wed, 14 May 2025 08:48:45 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "92",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "92"
+      }
+    },
+    {
+      "requestNumber": 9,
+      "timestamp": "2025-05-14T08:48:45.879Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:45 GMT, Wed, 14 May 2025 08:48:45 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "91",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "91"
+      }
+    },
+    {
+      "requestNumber": 10,
+      "timestamp": "2025-05-14T08:48:46.080Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:46 GMT, Wed, 14 May 2025 08:48:46 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "90",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "90"
+      }
+    },
+    {
+      "requestNumber": 11,
+      "timestamp": "2025-05-14T08:48:46.278Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:46 GMT, Wed, 14 May 2025 08:48:46 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "89",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "89"
+      }
+    },
+    {
+      "requestNumber": 12,
+      "timestamp": "2025-05-14T08:48:46.476Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:46 GMT, Wed, 14 May 2025 08:48:46 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "88",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "88"
+      }
+    },
+    {
+      "requestNumber": 13,
+      "timestamp": "2025-05-14T08:48:46.666Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:46 GMT, Wed, 14 May 2025 08:48:46 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "87",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "87"
+      }
+    },
+    {
+      "requestNumber": 14,
+      "timestamp": "2025-05-14T08:48:46.866Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:46 GMT, Wed, 14 May 2025 08:48:46 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "86",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "86"
+      }
+    },
+    {
+      "requestNumber": 15,
+      "timestamp": "2025-05-14T08:48:47.061Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:47 GMT, Wed, 14 May 2025 08:48:47 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "85",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "85"
+      }
+    },
+    {
+      "requestNumber": 16,
+      "timestamp": "2025-05-14T08:48:47.319Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:47 GMT, Wed, 14 May 2025 08:48:47 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "84",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "84"
+      }
+    },
+    {
+      "requestNumber": 17,
+      "timestamp": "2025-05-14T08:48:47.514Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:47 GMT, Wed, 14 May 2025 08:48:47 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "83",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "83"
+      }
+    },
+    {
+      "requestNumber": 18,
+      "timestamp": "2025-05-14T08:48:47.710Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:47 GMT, Wed, 14 May 2025 08:48:47 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "82",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "82"
+      }
+    },
+    {
+      "requestNumber": 19,
+      "timestamp": "2025-05-14T08:48:48.027Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:48 GMT, Wed, 14 May 2025 08:48:48 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "81",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "81"
+      }
+    },
+    {
+      "requestNumber": 20,
+      "timestamp": "2025-05-14T08:48:48.224Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:48 GMT, Wed, 14 May 2025 08:48:48 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "80",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "80"
+      }
+    },
+    {
+      "requestNumber": 21,
+      "timestamp": "2025-05-14T08:48:48.541Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:48 GMT, Wed, 14 May 2025 08:48:48 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "79",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "79"
+      }
+    },
+    {
+      "requestNumber": 22,
+      "timestamp": "2025-05-14T08:48:48.734Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:48 GMT, Wed, 14 May 2025 08:48:48 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "78",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "78"
+      }
+    },
+    {
+      "requestNumber": 23,
+      "timestamp": "2025-05-14T08:48:49.041Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:49 GMT, Wed, 14 May 2025 08:48:49 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "77",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "77"
+      }
+    },
+    {
+      "requestNumber": 24,
+      "timestamp": "2025-05-14T08:48:49.254Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:49 GMT, Wed, 14 May 2025 08:48:49 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "76",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "76"
+      }
+    },
+    {
+      "requestNumber": 25,
+      "timestamp": "2025-05-14T08:48:49.442Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:49 GMT, Wed, 14 May 2025 08:48:49 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "75",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "75"
+      }
+    },
+    {
+      "requestNumber": 26,
+      "timestamp": "2025-05-14T08:48:49.650Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:49 GMT, Wed, 14 May 2025 08:48:49 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "74",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "74"
+      }
+    },
+    {
+      "requestNumber": 27,
+      "timestamp": "2025-05-14T08:48:49.853Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:49 GMT, Wed, 14 May 2025 08:48:49 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "73",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "73"
+      }
+    },
+    {
+      "requestNumber": 28,
+      "timestamp": "2025-05-14T08:48:50.047Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:50 GMT, Wed, 14 May 2025 08:48:50 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "72",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "72"
+      }
+    },
+    {
+      "requestNumber": 29,
+      "timestamp": "2025-05-14T08:48:50.238Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:50 GMT, Wed, 14 May 2025 08:48:50 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "71",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "71"
+      }
+    },
+    {
+      "requestNumber": 30,
+      "timestamp": "2025-05-14T08:48:50.438Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:50 GMT, Wed, 14 May 2025 08:48:50 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "70",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "70"
+      }
+    },
+    {
+      "requestNumber": 31,
+      "timestamp": "2025-05-14T08:48:50.631Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:50 GMT, Wed, 14 May 2025 08:48:50 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "69",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "69"
+      }
+    },
+    {
+      "requestNumber": 32,
+      "timestamp": "2025-05-14T08:48:50.832Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:50 GMT, Wed, 14 May 2025 08:48:50 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "68",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "68"
+      }
+    },
+    {
+      "requestNumber": 33,
+      "timestamp": "2025-05-14T08:48:51.032Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:51 GMT, Wed, 14 May 2025 08:48:51 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "67",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "67"
+      }
+    },
+    {
+      "requestNumber": 34,
+      "timestamp": "2025-05-14T08:48:51.233Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:51 GMT, Wed, 14 May 2025 08:48:51 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "66",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "66"
+      }
+    },
+    {
+      "requestNumber": 35,
+      "timestamp": "2025-05-14T08:48:51.428Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:51 GMT, Wed, 14 May 2025 08:48:51 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "65",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "65"
+      }
+    },
+    {
+      "requestNumber": 36,
+      "timestamp": "2025-05-14T08:48:51.624Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:51 GMT, Wed, 14 May 2025 08:48:51 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "64",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "64"
+      }
+    },
+    {
+      "requestNumber": 37,
+      "timestamp": "2025-05-14T08:48:51.814Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:51 GMT, Wed, 14 May 2025 08:48:51 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "63",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "63"
+      }
+    },
+    {
+      "requestNumber": 38,
+      "timestamp": "2025-05-14T08:48:52.125Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:52 GMT, Wed, 14 May 2025 08:48:52 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "62",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "62"
+      }
+    },
+    {
+      "requestNumber": 39,
+      "timestamp": "2025-05-14T08:48:52.324Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:52 GMT, Wed, 14 May 2025 08:48:52 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "61",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "61"
+      }
+    },
+    {
+      "requestNumber": 40,
+      "timestamp": "2025-05-14T08:48:52.635Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:52 GMT, Wed, 14 May 2025 08:48:52 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "60",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "60"
+      }
+    },
+    {
+      "requestNumber": 41,
+      "timestamp": "2025-05-14T08:48:52.840Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:52 GMT, Wed, 14 May 2025 08:48:52 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "59",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "59"
+      }
+    },
+    {
+      "requestNumber": 42,
+      "timestamp": "2025-05-14T08:48:53.035Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:53 GMT, Wed, 14 May 2025 08:48:53 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "58",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "58"
+      }
+    },
+    {
+      "requestNumber": 43,
+      "timestamp": "2025-05-14T08:48:53.241Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:53 GMT, Wed, 14 May 2025 08:48:53 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "57",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "57"
+      }
+    },
+    {
+      "requestNumber": 44,
+      "timestamp": "2025-05-14T08:48:53.446Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:53 GMT, Wed, 14 May 2025 08:48:53 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "56",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "56"
+      }
+    },
+    {
+      "requestNumber": 45,
+      "timestamp": "2025-05-14T08:48:53.640Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:53 GMT, Wed, 14 May 2025 08:48:53 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "55",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "55"
+      }
+    },
+    {
+      "requestNumber": 46,
+      "timestamp": "2025-05-14T08:48:53.828Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:53 GMT, Wed, 14 May 2025 08:48:53 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "54",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "54"
+      }
+    },
+    {
+      "requestNumber": 47,
+      "timestamp": "2025-05-14T08:48:54.017Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:54 GMT, Wed, 14 May 2025 08:48:54 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "53",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "53"
+      }
+    },
+    {
+      "requestNumber": 48,
+      "timestamp": "2025-05-14T08:48:54.221Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:54 GMT, Wed, 14 May 2025 08:48:54 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "52",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "52"
+      }
+    },
+    {
+      "requestNumber": 49,
+      "timestamp": "2025-05-14T08:48:54.417Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:54 GMT, Wed, 14 May 2025 08:48:54 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "51",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "51"
+      }
+    },
+    {
+      "requestNumber": 50,
+      "timestamp": "2025-05-14T08:48:54.623Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:54 GMT, Wed, 14 May 2025 08:48:54 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "50",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "50"
+      }
+    },
+    {
+      "requestNumber": 51,
+      "timestamp": "2025-05-14T08:48:54.825Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:54 GMT, Wed, 14 May 2025 08:48:54 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "49",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "49"
+      }
+    },
+    {
+      "requestNumber": 52,
+      "timestamp": "2025-05-14T08:48:55.140Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:55 GMT, Wed, 14 May 2025 08:48:55 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "48",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "48"
+      }
+    },
+    {
+      "requestNumber": 53,
+      "timestamp": "2025-05-14T08:48:55.338Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:55 GMT, Wed, 14 May 2025 08:48:55 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "47",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "47"
+      }
+    },
+    {
+      "requestNumber": 54,
+      "timestamp": "2025-05-14T08:48:55.540Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:55 GMT, Wed, 14 May 2025 08:48:55 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "46",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "46"
+      }
+    },
+    {
+      "requestNumber": 55,
+      "timestamp": "2025-05-14T08:48:55.743Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:55 GMT, Wed, 14 May 2025 08:48:55 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "45",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "45"
+      }
+    },
+    {
+      "requestNumber": 56,
+      "timestamp": "2025-05-14T08:48:56.054Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:56 GMT, Wed, 14 May 2025 08:48:56 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "44",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "44"
+      }
+    },
+    {
+      "requestNumber": 57,
+      "timestamp": "2025-05-14T08:48:56.250Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:56 GMT, Wed, 14 May 2025 08:48:56 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "43",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "43"
+      }
+    },
+    {
+      "requestNumber": 58,
+      "timestamp": "2025-05-14T08:48:56.446Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:56 GMT, Wed, 14 May 2025 08:48:56 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "42",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "42"
+      }
+    },
+    {
+      "requestNumber": 59,
+      "timestamp": "2025-05-14T08:48:56.644Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:56 GMT, Wed, 14 May 2025 08:48:56 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "41",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "41"
+      }
+    },
+    {
+      "requestNumber": 60,
+      "timestamp": "2025-05-14T08:48:56.844Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:56 GMT, Wed, 14 May 2025 08:48:56 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "40",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "40"
+      }
+    },
+    {
+      "requestNumber": 61,
+      "timestamp": "2025-05-14T08:48:57.049Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:57 GMT, Wed, 14 May 2025 08:48:57 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "39",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "39"
+      }
+    },
+    {
+      "requestNumber": 62,
+      "timestamp": "2025-05-14T08:48:57.251Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:57 GMT, Wed, 14 May 2025 08:48:57 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "38",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "38"
+      }
+    },
+    {
+      "requestNumber": 63,
+      "timestamp": "2025-05-14T08:48:57.451Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:57 GMT, Wed, 14 May 2025 08:48:57 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "37",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "37"
+      }
+    },
+    {
+      "requestNumber": 64,
+      "timestamp": "2025-05-14T08:48:57.648Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:57 GMT, Wed, 14 May 2025 08:48:57 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "36",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "36"
+      }
+    },
+    {
+      "requestNumber": 65,
+      "timestamp": "2025-05-14T08:48:57.842Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:57 GMT, Wed, 14 May 2025 08:48:57 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "35",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "35"
+      }
+    },
+    {
+      "requestNumber": 66,
+      "timestamp": "2025-05-14T08:48:58.032Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:58 GMT, Wed, 14 May 2025 08:48:58 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "34",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "34"
+      }
+    },
+    {
+      "requestNumber": 67,
+      "timestamp": "2025-05-14T08:48:58.333Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:58 GMT, Wed, 14 May 2025 08:48:58 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "33",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "33"
+      }
+    },
+    {
+      "requestNumber": 68,
+      "timestamp": "2025-05-14T08:48:58.539Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:58 GMT, Wed, 14 May 2025 08:48:58 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "32",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "32"
+      }
+    },
+    {
+      "requestNumber": 69,
+      "timestamp": "2025-05-14T08:48:58.738Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:58 GMT, Wed, 14 May 2025 08:48:58 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "31",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "31"
+      }
+    },
+    {
+      "requestNumber": 70,
+      "timestamp": "2025-05-14T08:48:58.932Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:58 GMT, Wed, 14 May 2025 08:48:58 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "30",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "30"
+      }
+    },
+    {
+      "requestNumber": 71,
+      "timestamp": "2025-05-14T08:48:59.243Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:59 GMT, Wed, 14 May 2025 08:48:59 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "29",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "29"
+      }
+    },
+    {
+      "requestNumber": 72,
+      "timestamp": "2025-05-14T08:48:59.445Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:59 GMT, Wed, 14 May 2025 08:48:59 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "28",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "28"
+      }
+    },
+    {
+      "requestNumber": 73,
+      "timestamp": "2025-05-14T08:48:59.641Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:59 GMT, Wed, 14 May 2025 08:48:59 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "27",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "27"
+      }
+    },
+    {
+      "requestNumber": 74,
+      "timestamp": "2025-05-14T08:48:59.850Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:48:59 GMT, Wed, 14 May 2025 08:48:59 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "26",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "26"
+      }
+    },
+    {
+      "requestNumber": 75,
+      "timestamp": "2025-05-14T08:49:00.048Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:00 GMT, Wed, 14 May 2025 08:49:00 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "25",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "25"
+      }
+    },
+    {
+      "requestNumber": 76,
+      "timestamp": "2025-05-14T08:49:00.248Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:00 GMT, Wed, 14 May 2025 08:49:00 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "24",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "24"
+      }
+    },
+    {
+      "requestNumber": 77,
+      "timestamp": "2025-05-14T08:49:00.453Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:00 GMT, Wed, 14 May 2025 08:49:00 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "23",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "23"
+      }
+    },
+    {
+      "requestNumber": 78,
+      "timestamp": "2025-05-14T08:49:00.654Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:00 GMT, Wed, 14 May 2025 08:49:00 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "22",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "22"
+      }
+    },
+    {
+      "requestNumber": 79,
+      "timestamp": "2025-05-14T08:49:00.849Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:00 GMT, Wed, 14 May 2025 08:49:00 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "21",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "21"
+      }
+    },
+    {
+      "requestNumber": 80,
+      "timestamp": "2025-05-14T08:49:01.055Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:01 GMT, Wed, 14 May 2025 08:49:01 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "20",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "20"
+      }
+    },
+    {
+      "requestNumber": 81,
+      "timestamp": "2025-05-14T08:49:01.254Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:01 GMT, Wed, 14 May 2025 08:49:01 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "19",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "19"
+      }
+    },
+    {
+      "requestNumber": 82,
+      "timestamp": "2025-05-14T08:49:01.450Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:01 GMT, Wed, 14 May 2025 08:49:01 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "18",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "18"
+      }
+    },
+    {
+      "requestNumber": 83,
+      "timestamp": "2025-05-14T08:49:01.650Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:01 GMT, Wed, 14 May 2025 08:49:01 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "17",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "17"
+      }
+    },
+    {
+      "requestNumber": 84,
+      "timestamp": "2025-05-14T08:49:01.846Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:01 GMT, Wed, 14 May 2025 08:49:01 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "16",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "16"
+      }
+    },
+    {
+      "requestNumber": 85,
+      "timestamp": "2025-05-14T08:49:02.051Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:02 GMT, Wed, 14 May 2025 08:49:02 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "15",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "15"
+      }
+    },
+    {
+      "requestNumber": 86,
+      "timestamp": "2025-05-14T08:49:02.255Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:02 GMT, Wed, 14 May 2025 08:49:02 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "14",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "14"
+      }
+    },
+    {
+      "requestNumber": 87,
+      "timestamp": "2025-05-14T08:49:02.455Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:02 GMT, Wed, 14 May 2025 08:49:02 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "13",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "13"
+      }
+    },
+    {
+      "requestNumber": 88,
+      "timestamp": "2025-05-14T08:49:02.652Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:02 GMT, Wed, 14 May 2025 08:49:02 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "12",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "12"
+      }
+    },
+    {
+      "requestNumber": 89,
+      "timestamp": "2025-05-14T08:49:02.857Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:02 GMT, Wed, 14 May 2025 08:49:02 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "11",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "11"
+      }
+    },
+    {
+      "requestNumber": 90,
+      "timestamp": "2025-05-14T08:49:03.058Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:03 GMT, Wed, 14 May 2025 08:49:03 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "10",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "10"
+      }
+    },
+    {
+      "requestNumber": 91,
+      "timestamp": "2025-05-14T08:49:03.261Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:03 GMT, Wed, 14 May 2025 08:49:03 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "9",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "9"
+      }
+    },
+    {
+      "requestNumber": 92,
+      "timestamp": "2025-05-14T08:49:03.456Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:03 GMT, Wed, 14 May 2025 08:49:03 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "8",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "8"
+      }
+    },
+    {
+      "requestNumber": 93,
+      "timestamp": "2025-05-14T08:49:03.644Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:03 GMT, Wed, 14 May 2025 08:49:03 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "7",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "7"
+      }
+    },
+    {
+      "requestNumber": 94,
+      "timestamp": "2025-05-14T08:49:03.852Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:03 GMT, Wed, 14 May 2025 08:49:03 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "6",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "6"
+      }
+    },
+    {
+      "requestNumber": 95,
+      "timestamp": "2025-05-14T08:49:04.052Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:04 GMT, Wed, 14 May 2025 08:49:04 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "5",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "5"
+      }
+    },
+    {
+      "requestNumber": 96,
+      "timestamp": "2025-05-14T08:49:04.254Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:04 GMT, Wed, 14 May 2025 08:49:04 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "4",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "4"
+      }
+    },
+    {
+      "requestNumber": 97,
+      "timestamp": "2025-05-14T08:49:04.453Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:04 GMT, Wed, 14 May 2025 08:49:04 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "3",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "3"
+      }
+    },
+    {
+      "requestNumber": 98,
+      "timestamp": "2025-05-14T08:49:04.647Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:04 GMT, Wed, 14 May 2025 08:49:04 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "2",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "2"
+      }
+    },
+    {
+      "requestNumber": 99,
+      "timestamp": "2025-05-14T08:49:04.854Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:04 GMT, Wed, 14 May 2025 08:49:04 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "1",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "1"
+      }
+    },
+    {
+      "requestNumber": 100,
+      "timestamp": "2025-05-14T08:49:05.055Z",
+      "status": 200,
+      "data": {
+        "isValid": true
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:05 GMT, Wed, 14 May 2025 08:49:05 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "0",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "0"
+      }
+    },
+    {
+      "requestNumber": 101,
+      "timestamp": "2025-05-14T08:49:05.258Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:05 GMT, Wed, 14 May 2025 08:49:05 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212545",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212545",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 102,
+      "timestamp": "2025-05-14T08:49:05.450Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:05 GMT, Wed, 14 May 2025 08:49:05 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212545",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212545",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 103,
+      "timestamp": "2025-05-14T08:49:05.651Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:05 GMT, Wed, 14 May 2025 08:49:05 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212545",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212545",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 104,
+      "timestamp": "2025-05-14T08:49:05.846Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:05 GMT, Wed, 14 May 2025 08:49:05 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212545",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212545",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 105,
+      "timestamp": "2025-05-14T08:49:06.038Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:06 GMT, Wed, 14 May 2025 08:49:06 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212546",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212546",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 106,
+      "timestamp": "2025-05-14T08:49:06.231Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:06 GMT, Wed, 14 May 2025 08:49:06 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212546",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212546",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 107,
+      "timestamp": "2025-05-14T08:49:06.431Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:06 GMT, Wed, 14 May 2025 08:49:06 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212546",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212546",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 108,
+      "timestamp": "2025-05-14T08:49:06.626Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:06 GMT, Wed, 14 May 2025 08:49:06 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212546",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212546",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 109,
+      "timestamp": "2025-05-14T08:49:06.822Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:06 GMT, Wed, 14 May 2025 08:49:06 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212546",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212546",
+        "retryAfter": "0"
+      },
+      "error": true
+    },
+    {
+      "requestNumber": 110,
+      "timestamp": "2025-05-14T08:49:07.022Z",
+      "status": 429,
+      "data": {
+        "error": "Too Many Requests",
+        "message": "Rate limit exceeded. Please slow down your requests.",
+        "status_code": 429,
+        "retry_after": 0,
+        "limit": 100,
+        "current_plan": "unknown",
+        "upgrade_info": null
+      },
+      "headers": {
+        "host": "localhost:8000",
+        "date": "Wed, 14 May 2025 08:49:07 GMT, Wed, 14 May 2025 08:49:07 GMT",
+        "connection": "close",
+        "x-powered-by": "PHP/8.2.0",
+        "cache-control": "no-cache, private",
+        "content-type": "application/json",
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "100",
+        "retry-after": "0",
+        "x-ratelimit-reset": "1747212547",
+        "vary": "Origin"
+      },
+      "rateLimitInfo": {
+        "limit": "100",
+        "remaining": "100",
+        "reset": "1747212547",
+        "retryAfter": "0"
+      },
+      "error": true
+    }
+  ],
+  "summary": {
+    "totalRequests": 110,
+    "successfulRequests": 100,
+    "rateLimitedRequests": 10
+  }
+}
