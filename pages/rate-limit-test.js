@@ -1,55 +1,28 @@
-import { useState, useEffect, useRef } from 'react';
-import Head from 'next/head';
-import { Container, Row, Col, Form, Button, Table, Alert } from 'react-bootstrap';
-import TestluyPaymentSDK from 'testluy-payment-sdk';
+"use client";
+
+import { useState, useEffect } from 'react';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 
 // Register Chart.js components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 export default function RateLimitTest() {
-  // State for form inputs
-  const [clientId, setClientId] = useState('');
-  const [secretKey, setSecretKey] = useState('');
-  const [baseUrl, setBaseUrl] = useState('http://localhost:8000');
-  const [requestCount, setRequestCount] = useState(40);
+  // State for credentials
+  const [clientId, setClientId] = useState("");
+  const [secretKey, setSecretKey] = useState("");
+  
+  // State for test configuration
+  const [requestCount, setRequestCount] = useState(20);
   const [requestDelay, setRequestDelay] = useState(100);
-  const [maxRetries, setMaxRetries] = useState(3);
-  const [initialDelay, setInitialDelay] = useState(1000);
-  const [maxDelay, setMaxDelay] = useState(10000);
-  const [backoffFactor, setBackoffFactor] = useState(2);
-
+  const [useEnhancedSDK, setUseEnhancedSDK] = useState(true);
+  
   // State for test results
-  const [isRunning, setIsRunning] = useState(false);
-  const [logs, setLogs] = useState([]);
-  const [results, setResults] = useState([]);
-  const [summary, setSummary] = useState({
-    totalRequests: 0,
-    successfulRequests: 0,
-    rateLimitedRequests: 0,
-    otherErrors: 0,
-    successRate: '0%',
-    avgResponseTime: '0ms',
-  });
-
+  const [running, setRunning] = useState(false);
+  const [results, setResults] = useState(null);
+  const [error, setError] = useState(null);
+  const [progress, setProgress] = useState(0);
+  
   // Chart data
   const [chartData, setChartData] = useState({
     labels: [],
@@ -59,475 +32,338 @@ export default function RateLimitTest() {
         data: [],
         borderColor: 'rgb(75, 192, 192)',
         backgroundColor: 'rgba(75, 192, 192, 0.5)',
-        yAxisID: 'y',
       },
       {
-        label: 'Remaining Requests',
+        label: 'Success Rate (%)',
         data: [],
         borderColor: 'rgb(53, 162, 235)',
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        yAxisID: 'y1',
-      },
+      }
     ],
   });
 
-  // Refs
-  const logEndRef = useRef(null);
-
-  // Auto-scroll logs to bottom
-  useEffect(() => {
-    if (logEndRef.current) {
-      logEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [logs]);
-
-  // Add a log message
-  const addLog = (message, type = 'info') => {
-    setLogs((prevLogs) => [
-      ...prevLogs,
-      { id: Date.now(), message, type, timestamp: new Date().toLocaleTimeString() },
-    ]);
-  };
-
-  // Update chart data
-  const updateChart = (requestNumber, responseTime, remainingRequests) => {
-    setChartData((prevData) => {
-      const newLabels = [...prevData.labels, requestNumber];
-      const newResponseTimes = [...prevData.datasets[0].data, responseTime];
-      const newRemainingRequests = [...prevData.datasets[1].data, remainingRequests || 0];
-
-      return {
-        labels: newLabels,
-        datasets: [
-          {
-            ...prevData.datasets[0],
-            data: newResponseTimes,
-          },
-          {
-            ...prevData.datasets[1],
-            data: newRemainingRequests,
-          },
-        ],
-      };
-    });
-  };
-
-  // Update summary
-  const updateSummary = () => {
-    const totalRequests = results.length;
-    const successfulRequests = results.filter((r) => r.success).length;
-    const rateLimitedRequests = results.filter(
-      (r) => !r.success && r.error?.isRateLimitError
-    ).length;
-    const otherErrors = totalRequests - successfulRequests - rateLimitedRequests;
-    const successRate =
-      totalRequests > 0 ? `${Math.round((successfulRequests / totalRequests) * 100)}%` : '0%';
-    const totalResponseTime = results.reduce(
-      (sum, r) => sum + (r.duration || 0),
-      0
-    );
-    const avgResponseTime =
-      totalRequests > 0 ? `${Math.round(totalResponseTime / totalRequests)}ms` : '0ms';
-
-    setSummary({
-      totalRequests,
-      successfulRequests,
-      rateLimitedRequests,
-      otherErrors,
-      successRate,
-      avgResponseTime,
-    });
-  };
-
-  // Run the test
+  // Function to run the rate limit test
   const runTest = async () => {
-    // Validate inputs
-    if (!clientId || !secretKey || !baseUrl) {
-      addLog('Please fill in all required fields.', 'error');
+    if (!clientId || !secretKey) {
+      setError("Please enter your Client ID and Secret Key");
       return;
     }
-
-    // Reset state
-    setIsRunning(true);
-    setLogs([]);
-    setResults([]);
-    setChartData({
-      labels: [],
-      datasets: [
-        {
-          label: 'Response Time (ms)',
-          data: [],
-          borderColor: 'rgb(75, 192, 192)',
-          backgroundColor: 'rgba(75, 192, 192, 0.5)',
-          yAxisID: 'y',
-        },
-        {
-          label: 'Remaining Requests',
-          data: [],
-          borderColor: 'rgb(53, 162, 235)',
-          backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          yAxisID: 'y1',
-        },
-      ],
-    });
-
-    addLog('🚀 Starting rate limit test...', 'info');
-
-    // Create SDK instance
-    const sdk = new TestluyPaymentSDK({
-      clientId,
-      secretKey,
-      baseUrl,
-      retryConfig: {
-        maxRetries,
-        initialDelayMs: initialDelay,
-        maxDelayMs: maxDelay,
-        backoffFactor,
-      },
-    });
-
-    // Run the test
-    const newResults = [];
-    for (let i = 0; i < requestCount; i++) {
-      if (!isRunning) {
-        addLog('Test stopped by user.', 'warning');
-        break;
-      }
-
-      addLog(`Making request ${i + 1}/${requestCount}...`, 'info');
-
-      try {
-        const startTime = Date.now();
-        const result = await sdk.validateCredentials();
-        const endTime = Date.now();
-        const duration = endTime - startTime;
-
-        const resultObj = {
-          requestNumber: i + 1,
-          timestamp: new Date().toISOString(),
-          success: true,
-          duration,
-          rateLimitInfo: { ...sdk.rateLimitInfo },
-        };
-
-        newResults.push(resultObj);
-        setResults([...newResults]);
-
-        addLog(
-          `✅ Request ${i + 1} successful (${duration}ms). Remaining: ${
-            sdk.rateLimitInfo.remaining || 'unknown'
-          }`,
-          'success'
-        );
-
-        updateChart(i + 1, duration, sdk.rateLimitInfo.remaining);
-      } catch (error) {
-        const resultObj = {
-          requestNumber: i + 1,
-          timestamp: new Date().toISOString(),
-          success: false,
-          error: {
-            message: error.message,
-            isRateLimitError: error.isRateLimitError || false,
-            rateLimitInfo: error.rateLimitInfo,
-            retryAfter: error.retryAfter,
-            upgradeInfo: error.upgradeInfo,
-          },
-          sdkRateLimitInfo: { ...sdk.rateLimitInfo },
-        };
-
-        newResults.push(resultObj);
-        setResults([...newResults]);
-
-        if (error.isRateLimitError) {
-          addLog(
-            `⚠️ Rate limit hit on request ${i + 1}! Retry after: ${
-              error.retryAfter || 'unknown'
-            } seconds`,
-            'warning'
-          );
-          if (error.upgradeInfo) {
-            addLog(`Upgrade info: ${error.upgradeInfo}`, 'info');
+    
+    setRunning(true);
+    setError(null);
+    setResults(null);
+    setProgress(0);
+    
+    const testResults = {
+      totalRequests: requestCount,
+      successfulRequests: 0,
+      failedRequests: 0,
+      rateLimitedRequests: 0,
+      cloudflareBlocks: 0,
+      otherErrors: 0,
+      responseTimes: [],
+      errors: []
+    };
+    
+    const responseTimeData = [];
+    const successRateData = [];
+    const labels = [];
+    
+    try {
+      for (let i = 0; i < requestCount; i++) {
+        const startTime = performance.now();
+        
+        try {
+          // Use the appropriate API endpoint based on SDK selection
+          const endpoint = useEnhancedSDK 
+            ? "/api/enhanced-initiate-payment" 
+            : "/api/initiate-payment";
+          
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              amount: 1.00, // Use a small fixed amount for testing
+              clientId: clientId.trim(),
+              secretKey: secretKey.trim(),
+            }),
+          });
+          
+          const data = await response.json();
+          const endTime = performance.now();
+          const responseTime = endTime - startTime;
+          
+          testResults.responseTimes.push(responseTime);
+          responseTimeData.push(responseTime);
+          
+          if (response.ok) {
+            testResults.successfulRequests++;
+          } else {
+            testResults.failedRequests++;
+            
+            if (response.status === 429) {
+              testResults.rateLimitedRequests++;
+              testResults.errors.push(`Request ${i+1}: Rate limited - ${data.details || 'No details'}`);
+            } else if (response.status === 403 && data.type === "cloudflare") {
+              testResults.cloudflareBlocks++;
+              testResults.errors.push(`Request ${i+1}: Cloudflare blocked - ${data.details || 'No details'}`);
+            } else {
+              testResults.otherErrors++;
+              testResults.errors.push(`Request ${i+1}: Error ${response.status} - ${data.details || data.error || 'Unknown error'}`);
+            }
           }
-        } else {
-          addLog(`❌ Request ${i + 1} failed: ${error.message}`, 'error');
+        } catch (err) {
+          const endTime = performance.now();
+          const responseTime = endTime - startTime;
+          
+          testResults.responseTimes.push(responseTime);
+          responseTimeData.push(responseTime);
+          testResults.failedRequests++;
+          testResults.otherErrors++;
+          testResults.errors.push(`Request ${i+1}: ${err.message}`);
         }
-
-        updateChart(i + 1, 0, sdk.rateLimitInfo.remaining);
+        
+        // Calculate current success rate
+        const currentSuccessRate = ((i + 1) === 0) ? 0 : (testResults.successfulRequests / (i + 1)) * 100;
+        successRateData.push(currentSuccessRate);
+        labels.push(`${i+1}`);
+        
+        // Update progress
+        setProgress(Math.round(((i + 1) / requestCount) * 100));
+        
+        // Update chart data
+        setChartData({
+          labels,
+          datasets: [
+            {
+              label: 'Response Time (ms)',
+              data: responseTimeData,
+              borderColor: 'rgb(75, 192, 192)',
+              backgroundColor: 'rgba(75, 192, 192, 0.5)',
+              yAxisID: 'y',
+            },
+            {
+              label: 'Success Rate (%)',
+              data: successRateData,
+              borderColor: 'rgb(53, 162, 235)',
+              backgroundColor: 'rgba(53, 162, 235, 0.5)',
+              yAxisID: 'y1',
+            }
+          ],
+        });
+        
+        // Add delay between requests if specified
+        if (i < requestCount - 1 && requestDelay > 0) {
+          await new Promise(resolve => setTimeout(resolve, requestDelay));
+        }
       }
-
-      updateSummary();
-
-      // Add delay between requests
-      if (i < requestCount - 1) {
-        await new Promise((resolve) => setTimeout(resolve, requestDelay));
-      }
+      
+      // Calculate average response time
+      testResults.averageResponseTime = testResults.responseTimes.reduce((sum, time) => sum + time, 0) / testResults.responseTimes.length;
+      
+      // Calculate success rate
+      testResults.successRate = (testResults.successfulRequests / testResults.totalRequests) * 100;
+      
+      setResults(testResults);
+    } catch (err) {
+      setError(`Test failed: ${err.message}`);
+    } finally {
+      setRunning(false);
     }
-
-    setIsRunning(false);
-    addLog('✅ Test complete!', 'success');
   };
-
-  // Stop the test
-  const stopTest = () => {
-    setIsRunning(false);
-    addLog('Stopping test...', 'warning');
+  
+  // Chart options
+  const chartOptions = {
+    responsive: true,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    stacked: false,
+    scales: {
+      y: {
+        type: 'linear',
+        display: true,
+        position: 'left',
+        title: {
+          display: true,
+          text: 'Response Time (ms)'
+        }
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        grid: {
+          drawOnChartArea: false,
+        },
+        min: 0,
+        max: 100,
+        title: {
+          display: true,
+          text: 'Success Rate (%)'
+        }
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Rate Limit Test Results',
+      },
+    },
   };
 
   return (
-    <Container fluid className="p-4">
-      <Head>
-        <title>TestLuy Rate Limiting Test</title>
-      </Head>
-
-      <h1 className="mb-4">TestLuy Rate Limiting Test</h1>
-
-      <Row>
-        <Col md={4}>
-          <div className="p-3 border rounded mb-4">
-            <h2>Test Configuration</h2>
-            <Form>
-              <Form.Group className="mb-3">
-                <Form.Label>Client ID</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={clientId}
-                  onChange={(e) => setClientId(e.target.value)}
-                  placeholder="Your TestLuy Client ID"
-                  disabled={isRunning}
-                />
-              </Form.Group>
-
-              <Form.Group className="mb-3">
-                <Form.Label>Secret Key</Form.Label>
-                <Form.Control
-                  type="password"
-                  value={secretKey}
-                  onChange={(e) => setSecretKey(e.target.value)}
-                  placeholder="Your TestLuy Secret Key"
-                  disabled={isRunning}
-                />
-              </Form.Group>
-
-              <Form.Group className="mb-3">
-                <Form.Label>Base URL</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={baseUrl}
-                  onChange={(e) => setBaseUrl(e.target.value)}
-                  placeholder="API Base URL"
-                  disabled={isRunning}
-                />
-              </Form.Group>
-
-              <Row>
-                <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Request Count</Form.Label>
-                    <Form.Control
-                      type="number"
-                      value={requestCount}
-                      onChange={(e) => setRequestCount(parseInt(e.target.value))}
-                      min="1"
-                      max="100"
-                      disabled={isRunning}
-                    />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Delay (ms)</Form.Label>
-                    <Form.Control
-                      type="number"
-                      value={requestDelay}
-                      onChange={(e) => setRequestDelay(parseInt(e.target.value))}
-                      min="0"
-                      max="1000"
-                      disabled={isRunning}
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
-
-              <h3 className="mt-4">Retry Configuration</h3>
-
-              <Row>
-                <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Max Retries</Form.Label>
-                    <Form.Control
-                      type="number"
-                      value={maxRetries}
-                      onChange={(e) => setMaxRetries(parseInt(e.target.value))}
-                      min="0"
-                      max="10"
-                      disabled={isRunning}
-                    />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Initial Delay (ms)</Form.Label>
-                    <Form.Control
-                      type="number"
-                      value={initialDelay}
-                      onChange={(e) => setInitialDelay(parseInt(e.target.value))}
-                      min="100"
-                      max="5000"
-                      disabled={isRunning}
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
-
-              <Row>
-                <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Max Delay (ms)</Form.Label>
-                    <Form.Control
-                      type="number"
-                      value={maxDelay}
-                      onChange={(e) => setMaxDelay(parseInt(e.target.value))}
-                      min="1000"
-                      max="30000"
-                      disabled={isRunning}
-                    />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Backoff Factor</Form.Label>
-                    <Form.Control
-                      type="number"
-                      value={backoffFactor}
-                      onChange={(e) => setBackoffFactor(parseFloat(e.target.value))}
-                      min="1"
-                      max="5"
-                      step="0.1"
-                      disabled={isRunning}
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
-
-              <div className="d-grid gap-2">
-                {!isRunning ? (
-                  <Button variant="primary" onClick={runTest}>
-                    Start Test
-                  </Button>
-                ) : (
-                  <Button variant="danger" onClick={stopTest}>
-                    Stop Test
-                  </Button>
-                )}
-              </div>
-            </Form>
+    <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+      <h1>Rate Limit Resilience Test</h1>
+      
+      <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '5px' }}>
+        <p>
+          This test demonstrates the resilience of the enhanced SDK against rate limiting by making multiple rapid requests.
+          The standard SDK will quickly hit rate limits, while the enhanced SDK uses intelligent retry strategies to maintain higher success rates.
+        </p>
+      </div>
+      
+      <div style={{ marginBottom: '20px', padding: '15px', border: '1px solid #ddd', borderRadius: '5px' }}>
+        <h2 style={{ marginTop: '0' }}>Test Configuration</h2>
+        
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Client ID:</label>
+          <input
+            type="text"
+            value={clientId}
+            onChange={(e) => setClientId(e.target.value)}
+            placeholder="Enter your Client ID"
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          />
+        </div>
+        
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Secret Key:</label>
+          <input
+            type="password"
+            value={secretKey}
+            onChange={(e) => setSecretKey(e.target.value)}
+            placeholder="Enter your Secret Key"
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          />
+        </div>
+        
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Number of Requests:</label>
+          <input
+            type="number"
+            value={requestCount}
+            onChange={(e) => setRequestCount(parseInt(e.target.value) || 10)}
+            min="1"
+            max="100"
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          />
+        </div>
+        
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Delay Between Requests (ms):</label>
+          <input
+            type="number"
+            value={requestDelay}
+            onChange={(e) => setRequestDelay(parseInt(e.target.value) || 0)}
+            min="0"
+            max="1000"
+            style={{ width: '100%', padding: '8px', boxSizing: 'border-box' }}
+          />
+        </div>
+        
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>SDK Version:</label>
+          <div style={{ display: 'flex', gap: '15px' }}>
+            <label>
+              <input
+                type="radio"
+                name="sdkVersion"
+                checked={!useEnhancedSDK}
+                onChange={() => setUseEnhancedSDK(false)}
+              /> Standard
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="sdkVersion"
+                checked={useEnhancedSDK}
+                onChange={() => setUseEnhancedSDK(true)}
+              /> Enhanced (Cloudflare Resilient)
+            </label>
           </div>
-
-          <div className="p-3 border rounded">
-            <h2>Results Summary</h2>
-            <Table striped bordered hover>
-              <tbody>
-                <tr>
-                  <td>Total Requests</td>
-                  <td>{summary.totalRequests}</td>
-                </tr>
-                <tr>
-                  <td>Successful</td>
-                  <td>{summary.successfulRequests}</td>
-                </tr>
-                <tr>
-                  <td>Rate Limited</td>
-                  <td>{summary.rateLimitedRequests}</td>
-                </tr>
-                <tr>
-                  <td>Other Errors</td>
-                  <td>{summary.otherErrors}</td>
-                </tr>
-                <tr>
-                  <td>Success Rate</td>
-                  <td>{summary.successRate}</td>
-                </tr>
-                <tr>
-                  <td>Avg Response Time</td>
-                  <td>{summary.avgResponseTime}</td>
-                </tr>
-              </tbody>
-            </Table>
+        </div>
+        
+        <button
+          onClick={runTest}
+          disabled={running || !clientId || !secretKey}
+          style={{
+            padding: '10px 15px',
+            backgroundColor: running ? '#ccc' : '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: running ? 'not-allowed' : 'pointer'
+          }}
+        >
+          {running ? `Running Test (${progress}%)` : 'Run Test'}
+        </button>
+      </div>
+      
+      {error && (
+        <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f8d7da', borderRadius: '5px', color: '#721c24' }}>
+          <h3 style={{ marginTop: '0' }}>Error</h3>
+          <p>{error}</p>
+        </div>
+      )}
+      
+      {results && (
+        <div style={{ marginBottom: '20px' }}>
+          <h2>Test Results</h2>
+          
+          <div style={{ marginBottom: '20px' }}>
+            {chartData.labels.length > 0 && (
+              <Line options={chartOptions} data={chartData} />
+            )}
           </div>
-        </Col>
-
-        <Col md={8}>
-          <div className="p-3 border rounded mb-4">
-            <h2>Test Results</h2>
-            <div style={{ height: '400px' }}>
-              <Line
-                data={chartData}
-                options={{
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  scales: {
-                    y: {
-                      type: 'linear',
-                      display: true,
-                      position: 'left',
-                      title: {
-                        display: true,
-                        text: 'Response Time (ms)',
-                      },
-                    },
-                    y1: {
-                      type: 'linear',
-                      display: true,
-                      position: 'right',
-                      title: {
-                        display: true,
-                        text: 'Remaining Requests',
-                      },
-                      grid: {
-                        drawOnChartArea: false,
-                      },
-                    },
-                  },
-                }}
-              />
+          
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+            <div style={{ padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '5px' }}>
+              <h3 style={{ marginTop: '0' }}>Summary</h3>
+              <p><strong>Total Requests:</strong> {results.totalRequests}</p>
+              <p><strong>Successful Requests:</strong> {results.successfulRequests}</p>
+              <p><strong>Failed Requests:</strong> {results.failedRequests}</p>
+              <p><strong>Success Rate:</strong> {results.successRate.toFixed(2)}%</p>
+              <p><strong>Average Response Time:</strong> {results.averageResponseTime.toFixed(2)} ms</p>
+            </div>
+            
+            <div style={{ padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '5px' }}>
+              <h3 style={{ marginTop: '0' }}>Error Breakdown</h3>
+              <p><strong>Rate Limited Requests:</strong> {results.rateLimitedRequests}</p>
+              <p><strong>Cloudflare Blocks:</strong> {results.cloudflareBlocks}</p>
+              <p><strong>Other Errors:</strong> {results.otherErrors}</p>
             </div>
           </div>
-
-          <div className="p-3 border rounded">
-            <h2>Logs</h2>
-            <div
-              style={{
-                height: '400px',
-                overflowY: 'auto',
-                backgroundColor: '#f5f5f5',
-                padding: '10px',
-                fontFamily: 'monospace',
-              }}
-            >
-              {logs.map((log) => (
-                <div
-                  key={log.id}
-                  className={`log-entry ${log.type}`}
-                  style={{
-                    color:
-                      log.type === 'error'
-                        ? 'red'
-                        : log.type === 'warning'
-                        ? 'orange'
-                        : log.type === 'success'
-                        ? 'green'
-                        : 'blue',
-                  }}
-                >
-                  [{log.timestamp}] {log.message}
-                </div>
-              ))}
-              <div ref={logEndRef} />
+          
+          {results.errors.length > 0 && (
+            <div style={{ marginTop: '20px', padding: '15px', backgroundColor: '#f8f9fa', borderRadius: '5px' }}>
+              <h3 style={{ marginTop: '0' }}>Error Details</h3>
+              <ul style={{ maxHeight: '200px', overflowY: 'auto', margin: '0', paddingLeft: '20px' }}>
+                {results.errors.map((error, index) => (
+                  <li key={index}>{error}</li>
+                ))}
+              </ul>
             </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+          )}
+        </div>
+      )}
+      
+      <div style={{ marginTop: '30px', textAlign: 'center' }}>
+        <a href="/" style={{ color: '#0070f3', textDecoration: 'none' }}>Back to Home</a>
+      </div>
+    </div>
   );
 }

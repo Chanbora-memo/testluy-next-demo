@@ -8,6 +8,9 @@ export default function Home() {
   // Credential states
   const [clientId, setClientId] = useState("");
   const [secretKey, setSecretKey] = useState("");
+  
+  // SDK mode selection
+  const [useEnhancedSDK, setUseEnhancedSDK] = useState(true);
 
   // Payment initiation states
   const [amount, setAmount] = useState("");
@@ -82,7 +85,14 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch("/api/initiate-payment", {
+      // Use the appropriate API endpoint based on SDK selection
+      const endpoint = useEnhancedSDK 
+        ? "/api/enhanced-initiate-payment" 
+        : "/api/initiate-payment";
+      
+      console.log(`Using ${useEnhancedSDK ? 'enhanced' : 'standard'} SDK endpoint: ${endpoint}`);
+      
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -97,9 +107,20 @@ export default function Home() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data.details || data.error || `HTTP error! status: ${response.status}`
-        );
+        // Handle specific error types from enhanced SDK
+        if (response.status === 429 && data.type === "rate_limit") {
+          throw new Error(
+            `Rate limit exceeded. ${data.details} Please try again in ${data.retryAfter || 'a few'} seconds.`
+          );
+        } else if (response.status === 403 && data.type === "cloudflare") {
+          throw new Error(
+            `Cloudflare protection encountered. ${data.details}`
+          );
+        } else {
+          throw new Error(
+            data.details || data.error || `HTTP error! status: ${response.status}`
+          );
+        }
       }
 
       if (!data.paymentUrl || !data.transactionId) {
@@ -111,6 +132,11 @@ export default function Home() {
       setTransactionId(data.transactionId);
       console.log("Payment URL:", data.paymentUrl);
       console.log("Transaction ID:", data.transactionId);
+      
+      // Log if enhanced SDK was used
+      if (data.enhanced) {
+        console.log("Payment initiated using enhanced SDK with Cloudflare resilience");
+      }
     } catch (err) {
       console.error("Frontend Error:", err);
       setError(err.message || "An unexpected error occurred.");
@@ -141,7 +167,14 @@ export default function Home() {
     setValidationResult(null);
 
     try {
-      const response = await fetch("/api/validate-transaction", {
+      // Use the appropriate API endpoint based on SDK selection
+      const endpoint = useEnhancedSDK 
+        ? "/api/enhanced-validate-transaction" 
+        : "/api/validate-transaction";
+      
+      console.log(`Using ${useEnhancedSDK ? 'enhanced' : 'standard'} SDK endpoint: ${endpoint}`);
+      
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -156,13 +189,29 @@ export default function Home() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data.details || data.error || `HTTP error! status: ${response.status}`
-        );
+        // Handle specific error types from enhanced SDK
+        if (response.status === 429 && data.type === "rate_limit") {
+          throw new Error(
+            `Rate limit exceeded. ${data.details} Please try again in ${data.retryAfter || 'a few'} seconds.`
+          );
+        } else if (response.status === 403 && data.type === "cloudflare") {
+          throw new Error(
+            `Cloudflare protection encountered. ${data.details}`
+          );
+        } else {
+          throw new Error(
+            data.details || data.error || `HTTP error! status: ${response.status}`
+          );
+        }
       }
 
       setValidationResult(data);
       console.log("Validation result:", data);
+      
+      // Log if enhanced SDK was used
+      if (data.enhanced) {
+        console.log("Transaction validated using enhanced SDK with Cloudflare resilience");
+      }
     } catch (err) {
       console.error("Validation Error:", err);
       setValidationError(err.message || "An unexpected error occurred.");
@@ -191,6 +240,35 @@ export default function Home() {
             server-side API routes for SDK usage.
           </p>
         </div>
+        
+        {useEnhancedSDK && (
+          <div style={{ 
+            marginBottom: '20px', 
+            padding: '15px', 
+            backgroundColor: '#e6f7ff', 
+            borderRadius: '5px',
+            border: '1px solid #91d5ff',
+            textAlign: 'center'
+          }}>
+            <p style={{ margin: '0 0 10px 0' }}>
+              <strong>Enhanced SDK Active!</strong> Using Cloudflare-resilient version with improved error handling.
+            </p>
+            <a 
+              href="/rate-limit-test" 
+              style={{ 
+                display: 'inline-block',
+                padding: '8px 16px',
+                backgroundColor: '#1890ff',
+                color: 'white',
+                borderRadius: '4px',
+                textDecoration: 'none',
+                fontSize: '0.9em'
+              }}
+            >
+              Try Rate Limit Resilience Test →
+            </a>
+          </div>
+        )}
 
         {/* Credentials Configuration Section */}
         <h2 className={styles.sectionTitle}>API Credentials Configuration</h2>
@@ -214,6 +292,47 @@ export default function Home() {
             placeholder="Enter your Testluy Secret Key"
             className={styles.inputField}
           />
+
+          <div style={{ marginTop: '15px', marginBottom: '15px' }}>
+            <label style={{ display: 'block', marginBottom: '5px' }}>SDK Version: </label>
+            <div style={{ display: 'flex', gap: '15px' }}>
+              <label>
+                <input
+                  type="radio"
+                  name="sdkVersion"
+                  checked={!useEnhancedSDK}
+                  onChange={() => setUseEnhancedSDK(false)}
+                /> Standard
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="sdkVersion"
+                  checked={useEnhancedSDK}
+                  onChange={() => setUseEnhancedSDK(true)}
+                /> Enhanced (Cloudflare Resilient)
+              </label>
+            </div>
+            
+            {useEnhancedSDK && (
+              <div style={{ 
+                marginTop: '10px', 
+                padding: '10px', 
+                backgroundColor: '#f0f8ff', 
+                borderRadius: '5px',
+                fontSize: '0.9em'
+              }}>
+                <p style={{ margin: '0 0 8px 0', fontWeight: 'bold' }}>Enhanced SDK Features:</p>
+                <ul style={{ margin: '0', paddingLeft: '20px' }}>
+                  <li>Cloudflare protection bypass with browser-like headers</li>
+                  <li>Intelligent retry with exponential backoff</li>
+                  <li>Detailed error handling for rate limits</li>
+                  <li>User-Agent rotation to avoid detection</li>
+                  <li>Request timing variation for improved resilience</li>
+                </ul>
+              </div>
+            )}
+          </div>
 
           <p className={styles.credentialsNote}>
             <strong>Note:</strong> Enter the credentials you obtained from your
