@@ -17,9 +17,6 @@ function PaymentCallbackContent() {
     if (status && transaction_id) {
       if (status === "success") {
         setMessage(`Payment successful! Transaction ID: ${transaction_id}`);
-        // Example: redirect after a delay
-        // const timer = setTimeout(() => router.push('/'), 3000);
-        // return () => clearTimeout(timer); // Cleanup timer
       } else {
         setMessage(
           `Payment failed or was cancelled. Transaction ID: ${transaction_id}`

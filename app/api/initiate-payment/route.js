@@ -36,7 +36,7 @@ export async function POST(req) {
   }
 
   // Get base URL from environment variables
-  const baseUrl = process.env.TESTLUY_BASE_URL || "https://testluy.tech";
+  const baseUrl = process.env.TESTLUY_BASE_URL || "https://api-testluy.paragoniu.app";
 
   // Use environment variables for callback URLs as fallback, or construct them
   const callbackUrl =
