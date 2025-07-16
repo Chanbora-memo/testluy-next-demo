@@ -2,13 +2,14 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./Home.module.css";
 
 export default function Home() {
   // Credential states
   const [clientId, setClientId] = useState("");
   const [secretKey, setSecretKey] = useState("");
-  
+
   // SDK mode selection
   const [useEnhancedSDK, setUseEnhancedSDK] = useState(true);
 
@@ -86,12 +87,12 @@ export default function Home() {
 
     try {
       // Use the appropriate API endpoint based on SDK selection
-      const endpoint = useEnhancedSDK 
-        ? "/api/enhanced-initiate-payment" 
+      const endpoint = useEnhancedSDK
+        ? "/api/enhanced-initiate-payment"
         : "/api/initiate-payment";
-      
+
       console.log(`Using ${useEnhancedSDK ? 'enhanced' : 'standard'} SDK endpoint: ${endpoint}`);
-      
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -132,7 +133,7 @@ export default function Home() {
       setTransactionId(data.transactionId);
       console.log("Payment URL:", data.paymentUrl);
       console.log("Transaction ID:", data.transactionId);
-      
+
       // Log if enhanced SDK was used
       if (data.enhanced) {
         console.log("Payment initiated using enhanced SDK with Cloudflare resilience");
@@ -168,12 +169,12 @@ export default function Home() {
 
     try {
       // Use the appropriate API endpoint based on SDK selection
-      const endpoint = useEnhancedSDK 
-        ? "/api/enhanced-validate-transaction" 
+      const endpoint = useEnhancedSDK
+        ? "/api/enhanced-validate-transaction"
         : "/api/validate-transaction";
-      
+
       console.log(`Using ${useEnhancedSDK ? 'enhanced' : 'standard'} SDK endpoint: ${endpoint}`);
-      
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -207,7 +208,7 @@ export default function Home() {
 
       setValidationResult(data);
       console.log("Validation result:", data);
-      
+
       // Log if enhanced SDK was used
       if (data.enhanced) {
         console.log("Transaction validated using enhanced SDK with Cloudflare resilience");
@@ -240,12 +241,12 @@ export default function Home() {
             server-side API routes for SDK usage.
           </p>
         </div>
-        
+
         {useEnhancedSDK && (
-          <div style={{ 
-            marginBottom: '20px', 
-            padding: '15px', 
-            backgroundColor: '#e6f7ff', 
+          <div style={{
+            marginBottom: '20px',
+            padding: '15px',
+            backgroundColor: '#e6f7ff',
             borderRadius: '5px',
             border: '1px solid #91d5ff',
             textAlign: 'center'
@@ -253,9 +254,9 @@ export default function Home() {
             <p style={{ margin: '0 0 10px 0' }}>
               <strong>Enhanced SDK Active!</strong> Using Cloudflare-resilient version with improved error handling.
             </p>
-            <a 
-              href="/rate-limit-test" 
-              style={{ 
+            <Link
+              href="/rate-limit-test"
+              style={{
                 display: 'inline-block',
                 padding: '8px 16px',
                 backgroundColor: '#1890ff',
@@ -266,7 +267,7 @@ export default function Home() {
               }}
             >
               Try Rate Limit Resilience Test →
-            </a>
+            </Link>
           </div>
         )}
 
@@ -313,12 +314,12 @@ export default function Home() {
                 /> Enhanced (Cloudflare Resilient)
               </label>
             </div>
-            
+
             {useEnhancedSDK && (
-              <div style={{ 
-                marginTop: '10px', 
-                padding: '10px', 
-                backgroundColor: '#f0f8ff', 
+              <div style={{
+                marginTop: '10px',
+                padding: '10px',
+                backgroundColor: '#f0f8ff',
                 borderRadius: '5px',
                 fontSize: '0.9em'
               }}>
@@ -432,9 +433,9 @@ export default function Home() {
                 <span
                   className={
                     styles[
-                      `status${validationResult.status
-                        ?.charAt(0)
-                        .toUpperCase()}${validationResult.status
+                    `status${validationResult.status
+                      ?.charAt(0)
+                      .toUpperCase()}${validationResult.status
                         ?.slice(1)
                         .toLowerCase()}` || ""
                     ]

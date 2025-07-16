@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
@@ -362,7 +363,7 @@ export default function RateLimitTest() {
       )}
       
       <div style={{ marginTop: '30px', textAlign: 'center' }}>
-        <a href="/" style={{ color: '#0070f3', textDecoration: 'none' }}>Back to Home</a>
+        <Link href="/" style={{ color: '#0070f3', textDecoration: 'none' }}>Back to Home</Link>
       </div>
     </div>
   );
