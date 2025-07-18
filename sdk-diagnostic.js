@@ -5,12 +5,12 @@
  * Run this script in your project to identify configuration or URL construction issues.
  */
 
-import TestluyPaymentSDK from './index-enhanced.js';
+import TestluyPaymentSDK from 'testluy-payment-sdk';
 
-// Sample credentials for testing - replace with your actual credentials
 const TEST_CREDENTIALS = {
-  clientId: '0f07be84baa574d9a639bbea06db61ba',
-  secretKey: 'secret_232e5ef95af0680a48eaf9d95cab2ea0695d6d1d8f3ff4adf1906829d2d8fe80',
+  clientId: 'fd7865634fcfaaac2b96f03386e07d27',
+  secretKey: 'secret_3c8ba8fab36d6e259a2bc40230c40c9891b36cd08e6f33224e4b0abb45170e24',
+  // Using the standardized base URL
   baseUrl: 'https://api-testluy.paragoniu.app'
 };
 
@@ -20,7 +20,7 @@ async function runDiagnostic() {
   console.log(`- Node.js Version: ${process.version}`);
   console.log(`- Platform: ${process.platform}`);
   console.log(`- SDK Version: ${TestluyPaymentSDK.version || 'Unknown'}`);
-  
+
   // Test 1: Basic SDK initialization
   console.log('\n=== Test 1: SDK Initialization ===');
   try {
@@ -33,7 +33,7 @@ async function runDiagnostic() {
       }
     });
     console.log('✓ SDK initialized successfully');
-    
+
     // Check if the SDK has the expected methods
     const methods = [
       'validateCredentials',
@@ -42,20 +42,20 @@ async function runDiagnostic() {
       'generateDiagnosticReport',
       'getTroubleshootingSuggestions'
     ];
-    
+
     const missingMethods = methods.filter(method => typeof sdk[method] !== 'function');
     if (missingMethods.length > 0) {
       console.log(`⚠ Warning: The following methods are missing: ${missingMethods.join(', ')}`);
     } else {
       console.log('✓ All expected methods are available');
     }
-    
+
     // Check SDK configuration
     console.log('\nSDK Configuration:');
     console.log(`- Base URL: ${sdk.config?.baseUrl || 'Not set'}`);
     console.log(`- Cloudflare Protection: ${sdk.config?.cloudflareConfig?.enabled ? 'Enabled' : 'Disabled'}`);
     console.log(`- Retry Configuration: Max ${sdk.config?.retryConfig?.maxRetries || 'Unknown'} retries`);
-    
+
     // Test 2: URL Construction
     console.log('\n=== Test 2: URL Construction ===');
     // Access the internal _buildUrl method if available
@@ -66,7 +66,7 @@ async function runDiagnostic() {
         '/payment-simulator/generate-url',
         'payment-simulator/generate-url'
       ];
-      
+
       console.log('Testing URL construction:');
       testUrls.forEach(url => {
         try {
@@ -79,7 +79,7 @@ async function runDiagnostic() {
     } else {
       console.log('⚠ Cannot test URL construction (internal method not accessible)');
     }
-    
+
     // Test 3: Direct API Connection
     console.log('\n=== Test 3: Direct API Connection ===');
     try {
@@ -92,17 +92,17 @@ async function runDiagnostic() {
         },
         body: JSON.stringify({})
       });
-      
+
       console.log(`Status: ${response.status} ${response.statusText}`);
       console.log('Headers:', Object.fromEntries(response.headers.entries()));
-      
+
       try {
         const data = await response.json();
         console.log('Response data:', data);
       } catch (e) {
         const text = await response.text();
         console.log('Response text preview:', text.substring(0, 200) + '...');
-        
+
         if (text.includes('<!DOCTYPE') || text.includes('<html')) {
           console.log('⚠ HTML response detected - likely Cloudflare protection');
         }
@@ -110,7 +110,7 @@ async function runDiagnostic() {
     } catch (error) {
       console.error('Direct fetch error:', error.message);
     }
-    
+
     // Test 4: SDK API Call
     console.log('\n=== Test 4: SDK API Call ===');
     try {
@@ -121,7 +121,7 @@ async function runDiagnostic() {
       console.error('✗ Validation error:', error.message);
       console.log('Error details:', error);
     }
-    
+
     // Test 5: Generate Diagnostic Report
     console.log('\n=== Test 5: Diagnostic Report ===');
     if (typeof sdk.generateDiagnosticReport === 'function') {
@@ -130,15 +130,15 @@ async function runDiagnostic() {
     } else {
       console.log('⚠ Diagnostic report not available');
     }
-    
+
   } catch (error) {
     console.error('SDK initialization error:', error);
   }
-  
+
   console.log('\n=== Diagnostic Complete ===');
   console.log('\nTroubleshooting Tips:');
   console.log('1. Ensure the baseUrl is correctly specified and accessible');
-  console.log('2. Enable Cloudflare resilience features: cloudflareConfig: { enabled: true }');
+  console.log('2. Cloudflare resilience features are enabled by default');
   console.log('3. Configure retry behavior: retryConfig: { maxRetries: 3 }');
   console.log('4. Check network connectivity and firewall settings');
   console.log('5. Verify that your credentials are correct');

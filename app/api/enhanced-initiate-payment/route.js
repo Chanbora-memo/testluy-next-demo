@@ -1,6 +1,6 @@
 // app/api/enhanced-initiate-payment/route.js
-import TestluyPaymentSDK from "testluy-payment-sdk/index-enhanced.js";
 import { NextResponse } from "next/server";
+import { initiateSDKPayment } from "../../../utils/sdk-config";
 
 export async function POST(req) {
   let amount, clientId, secretKey;
@@ -78,37 +78,22 @@ export async function POST(req) {
   
   try {
     console.log(
-      `Instantiating Enhanced SDK with clientId: ${clientId}, baseUrl: ${baseUrl}`
+      `Initiating payment with clientId: ${clientId}, baseUrl: ${baseUrl}`
     );
     
-    // Create SDK instance with enhanced Cloudflare resilience
-    const sdk = new TestluyPaymentSDK({
-      clientId: clientId.trim(),
-      secretKey: secretKey.trim(),
-      baseUrl: baseUrl,
-      // Configure retry behavior
-      retryConfig: {
-        maxRetries: 3,
-        baseDelay: 1000,
-        maxDelay: 10000,
-        backoffFactor: 2,
-        jitterFactor: 0.1
-      },
-      // Configure Cloudflare resilience
-      cloudflareConfig: {
-        enabled: true,
-        rotateUserAgent: true,
-        addBrowserHeaders: true
-      }
-    });
-
     console.log(
       `Calling initiatePayment with amount: ${amount}, callback: ${callbackUrl}, backUrl: ${
         backUrl || "Not provided"
       }`
     );
     
-    const paymentResult = await sdk.initiatePayment(
+    // Use the utility function to initiate payment
+    const paymentResult = await initiateSDKPayment(
+      {
+        clientId: clientId.trim(),
+        secretKey: secretKey.trim(),
+        baseUrl: baseUrl
+      },
       amount,
       callbackUrl,
       backUrl

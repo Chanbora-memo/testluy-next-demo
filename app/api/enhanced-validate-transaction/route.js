@@ -58,12 +58,8 @@ export async function POST(req) {
         backoffFactor: 2,
         jitterFactor: 0.1
       },
-      // Configure Cloudflare resilience
-      cloudflareConfig: {
-        enabled: true,
-        rotateUserAgent: true,
-        addBrowserHeaders: true
-      }
+      // Cloudflare resilience is enabled by default in the SDK
+      // No need to explicitly set cloudflareConfig
     });
 
     console.log(
