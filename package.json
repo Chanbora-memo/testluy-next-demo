@@ -17,7 +17,7 @@
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "testluy-payment-sdk": "^3.6.4"
+    "testluy-payment-sdk": "^3.6.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
