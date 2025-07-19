@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4100",
+    "dev": "next dev -p 5000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 5000",
     "lint": "next lint",
     "test:rate-limit": "node tests/rate-limiting/test-rate-limiting.js",
     "test:sdk-rate-limit": "node tests/rate-limiting/test-sdk-rate-limiting.js",
@@ -17,7 +17,7 @@
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "testluy-payment-sdk": "^3.6.5"
+    "testluy-payment-sdk": "^3.6.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
