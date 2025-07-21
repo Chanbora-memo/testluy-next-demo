@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  testluy-demo:
+    image: testluy-demo:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Add your production environment variables here
+      # - NEXT_PUBLIC_API_URL=${API_URL}
+      # - TESTLUY_API_KEY=${TESTLUY_API_KEY}
+      # - TESTLUY_SECRET_KEY=${TESTLUY_SECRET_KEY}
+    restart: unless-stopped
+    networks:
+      - testluy-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  testluy-network:
+    driver: bridge

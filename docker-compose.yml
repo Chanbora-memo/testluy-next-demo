@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  testluy-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      # Add your environment variables here
+      # - NEXT_PUBLIC_API_URL=your_api_url
+      # - TESTLUY_API_KEY=your_api_key
+      # - TESTLUY_SECRET_KEY=your_secret_key
+    restart: unless-stopped
+    networks:
+      - testluy-network
+
+networks:
+  testluy-network:
+    driver: bridge
